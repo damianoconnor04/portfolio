@@ -1,26 +1,17 @@
+'use client'
 import React from 'react';
-import Box from '@mui/material/Box';
-import Header from './components/sections/header/Header';
-import Skills from './components/sections/skills/Skills';
-import Container from '@mui/material/Container';
-import Projects from './components/sections/projects/Projects';
-import Divider from '@mui/material/Divider';
-import useMediaQuery from '@mui/material/useMediaQuery';
-import Links from './components/global/navigation/Links';
-import Navigation from './components/global/navigation/Navigation';
+import { useIsMobile } from '@/hooks/useIsMobile';
+import Skeleton from '@mui/material/Skeleton';
+import App from './App'
 
-const App = () => {
-  return (
-    <Box sx={{ overflow: 'hidden' }}>
-      <Header />
-      <Container sx={{ width: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', }}>
-        <Navigation />
-        <Skills />
-        <Divider orientation='vertical' sx={{ height: '8rem' }} />
-        <Projects />
-      </Container>
-    </Box>
-  );
+const PageRender = () => {
+  const { isMobile, isTablet, isDesktop, isLargeDesktop } = useIsMobile();
+  if (isMobile === undefined || isTablet === undefined || isDesktop === undefined || isLargeDesktop === undefined) {
+    return <Skeleton /> // TODO: make good looking skeleton + loading anim
+  }
+  else {
+    return <App />
+  }
 };
 
-export default App;
+export default PageRender;

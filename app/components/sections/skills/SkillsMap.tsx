@@ -4,15 +4,16 @@ import Typography from '@mui/material/Typography';
 import Chip from '@mui/material/Chip';
 import Divider from '@mui/material/Divider';
 import { skillsContent, skillsType } from './_content';
-import { useMediaQuery } from '@mui/material';
+import { useIsMobile } from '@/hooks/useIsMobile';
 
 type SkillsMapProps = { activeSkill: skillsType };
 const SkillsMap: React.FC<SkillsMapProps> = ({ activeSkill }) => {
   const categories = skillsContent[activeSkill];
-  const isMobile = useMediaQuery('(max-width:600px)');
-
   if (!categories) return null;
 
+  const { isMobile } = useIsMobile();
+  if (isMobile === undefined) return null;
+  
   // TODO: add windows settings border effect to chips
 
   return (

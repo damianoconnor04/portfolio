@@ -1,12 +1,13 @@
 'use client'
 import React from 'react'
-import useMediaQuery from '@mui/material/useMediaQuery'
 import Links from './Links';
 import Box from '@mui/material/Box';
+import { useIsMobile } from '@/hooks/useIsMobile';
 
 const Navigation = () => {
-  const isTablet = useMediaQuery('(max-width: 960px)');
-  if (!isTablet) return null
+  const { isTablet } = useIsMobile()
+  if (isTablet === undefined) return null // SSR check
+  if (!isTablet) return null // render on mobile
   return (
     <Box sx={{ pt: 6 }}>
       <Links />

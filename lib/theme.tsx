@@ -116,6 +116,7 @@ const theme = createTheme({
         fontSize: '1.5rem',
         lineHeight: '2rem',
       },
+      fontWeight: 500,
       cursor: 'default',
     },
     h5: {

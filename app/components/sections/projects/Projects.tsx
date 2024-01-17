@@ -6,9 +6,12 @@ import Typography from '@mui/material/Typography';
 import ProjectsMap from './ProjectsMap';
 import { alpha, useTheme } from '@mui/material';
 import { mono } from '@/lib/theme';
+import { useIsMobile } from '@/hooks/useIsMobile';
 
 const Projects = () => {
   const theme = useTheme();
+  const { isMobile } = useIsMobile();
+
   return (
     <Box
       className='section'
@@ -17,7 +20,7 @@ const Projects = () => {
         sx={{
           position: 'absolute',
           top: '0px',
-          left: '-150px',
+          left: isMobile ? '-150px' : '0px',
           zIndex: -1,
           borderRadius: '50%',
           filter: 'blur(100px)',
@@ -34,7 +37,7 @@ const Projects = () => {
       <Stack direction='column' gap={3} sx={{ py: 2 }}>
         <Stack gap={1}>
           <Typography
-            variant='h5'
+            variant='h4'
             sx={{
               textAlign: 'center',
               cursor: 'default',
@@ -45,7 +48,13 @@ const Projects = () => {
           </Typography>
           <Typography
             variant='h3'
-            sx={{ textAlign: 'center', cursor: 'default' }}>
+            sx={{
+              textAlign: 'center',
+              cursor: 'default',
+              textShadow: `1px 1px 4px ${theme.palette.primary.dark}`,
+              color: theme.palette.text.primary,
+            }}
+          >
             Projects
           </Typography>
         </Stack>

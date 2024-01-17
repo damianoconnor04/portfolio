@@ -6,26 +6,29 @@ import Typography from '@mui/material/Typography';
 import CustomTextButton from '../../global/CustomTextButton';
 import useTheme from '@mui/material/styles/useTheme';
 import { skills, skillsType } from './_content';
-import { alpha, useMediaQuery } from '@mui/material';
+import { alpha } from '@mui/material';
 import SkillsMap from './SkillsMap';
 import { mono } from '@/lib/theme';
+import { useIsMobile } from '@/hooks/useIsMobile';
 
 const Skills = () => {
   const theme = useTheme();
-  const isMobile = useMediaQuery('(max-width: 600px)');
-  const [activeSkill, setActiveSkill] = React.useState<skillsType>('Design');
 
+  const [activeSkill, setActiveSkill] = React.useState<skillsType>('Design');
   const activeBg = theme.palette.text.primary + '!important';
   const activeColor = theme.palette.background.default + '!important';
 
+  const { isMobile, isTablet } = useIsMobile();
+  if (isTablet === undefined || isMobile === undefined) return null;
+
   return (
-    <Box className='section' sx={{ py: 6, px: 4, position: 'relative' }}>
+    <Box className='section' sx={{ py: 6, px: 4, position: 'relative', width: '100%', }}>
       <Box
         sx={{
           content: '""',
           position: 'absolute',
-          top: '25px',
-          left: isMobile ? '50px' : '250px',
+          top: isTablet ? '-50px' : '25px',
+          left: isTablet ? '150px' : '550px',
           zIndex: -1,
           borderRadius: '50%',
           filter: 'blur(100px)',
@@ -36,14 +39,14 @@ const Skills = () => {
             `radial-gradient(at 0 0, 
               ${alpha(theme.palette.secondary.dark, 0.3)}, 
               ${alpha(theme.palette.secondary.main, 0.2)}, 
-              ${alpha(theme.palette.secondary.light,0.1)}
+              ${alpha(theme.palette.secondary.light, 0.1)}
             )`,
         }}
       />
       <Stack direction='column' gap={3}>
         <Stack gap={1}>
           <Typography
-            variant='h5'
+            variant='h4'
             sx={{
               textAlign: 'center',
               cursor: 'default',
@@ -52,7 +55,13 @@ const Skills = () => {
             }}>
             01.
           </Typography>
-          <Typography variant='h3' sx={{ textAlign: 'center' }}>
+          <Typography
+            variant='h3'
+            sx={{
+              textAlign: 'center',
+              textShadow: `1px 1px 6px ${theme.palette.secondary.dark}`,
+              color: theme.palette.text.primary,
+            }}>
             Workflow
           </Typography>
         </Stack>

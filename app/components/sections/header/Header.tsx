@@ -10,10 +10,11 @@ import CustomButton from '../../global/CustomButton'
 import useMediaQuery from '@mui/material/useMediaQuery'
 import { GitHub, LinkedIn, FileDownloadOutlined, Email } from '@mui/icons-material'
 import Links from '../../global/navigation/Links'
+import { useIsMobile } from '@/hooks/useIsMobile'
 
 const Header = () => {
   // show/hide header btns
-  const isTablet = useMediaQuery('(max-width: 960px)');
+  const { isTablet } = useIsMobile()
 
   // state
   const [mousePosition, setMousePosition] = React.useState<{ x: number, y: number }>({ x: 0, y: 0 });
@@ -48,7 +49,7 @@ const Header = () => {
             <Typography variant='h1'>Damian O&apos;Connor</Typography>
             {!isTablet && <Links />}
           </Stack>
-          <Typography variant='h5' sx={{ mt: -1, textWrap: 'pretty', zIndex: 1 }}>Front End Developer at Leap Brands</Typography>
+          <Typography variant='h4' sx={{ mt: -1, textWrap: 'pretty', zIndex: 1 }}>Front End Developer at Leap Brands</Typography>
           <Typography variant='body2' sx={{ textWrap: 'pretty', zIndex: 1, cursor: 'default', mt: -0.5 }}>I bring ideas to life through elegant, responsive web solutions— pixel by pixel.</Typography>
         </Stack>
         <Stack direction='row' justifyContent='space-between' alignItems='center' sx={{ pb: isTablet ? 1 : 2, }}>

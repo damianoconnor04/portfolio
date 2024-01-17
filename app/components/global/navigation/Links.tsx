@@ -11,7 +11,7 @@ const Links = () => {
   return (
     <Stack direction='row' justifyContent='center' alignItems='center' gap={2.5}
       sx={{
-        p: 1.5, backgroundColor: (theme) => alpha(theme.palette.common.black, 0.5), backdropFilter: 'blur(2px)', border: '1px solid', borderColor: (theme) => alpha(theme.palette.grey[900], 1), borderRadius: '9px', zIndex: 1,
+        p: 1.5, px: 2.25, backgroundColor: (theme) => alpha(theme.palette.common.black, 0.5), backdropFilter: 'blur(2px)', border: '1px solid', borderColor: (theme) => alpha(theme.palette.grey[800], 0.8), borderRadius: '9px', zIndex: 1,
       }}
     >
       {sections.map((section, idx) => (

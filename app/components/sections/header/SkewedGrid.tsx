@@ -1,17 +1,16 @@
 'use client'
 import React from 'react';
 import Box from '@mui/material/Box';
-import { useMediaQuery } from '@mui/material';
+import { useIsMobile } from '@/hooks/useIsMobile';
 
 interface SkewedGridProps {
   opacity: number;
   mousePosition: { x: number; y: number };
 }
 const SkewedGrid: React.FC<SkewedGridProps> = ({ opacity, mousePosition }) => {
-  const isMobile = useMediaQuery('(max-width: 600px)');
-  const isTablet = useMediaQuery('(max-width: 960px)');
-  const isDesktop = useMediaQuery('(max-width: 1360px)');
-  const isLargeDesktop = useMediaQuery('(max-width: 1760px)');
+  const { isMobile, isTablet, isDesktop, isLargeDesktop }  = useIsMobile();
+  if (isMobile === undefined || isTablet === undefined || isDesktop === undefined || isLargeDesktop === undefined) return null;
+
   const totalSquares = isMobile ? 48 : isTablet ? 72 : isDesktop ? 112 : isLargeDesktop ? 144 : 176;
   const rows = 8;
 
