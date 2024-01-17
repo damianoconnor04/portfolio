@@ -21,13 +21,18 @@ const color = {
 };
 
 // next font unique identifiers
-const rubik = "__Rubik_98e1b5, __Rubik_Fallback_98e1b5";
-const poppins = "__Poppins_8c1529, __Poppins_Fallback_8c1529";
+export const rubik = "__Rubik_98e1b5, __Rubik_Fallback_98e1b5";
+export const poppins = "__Poppins_8c1529, __Poppins_Fallback_8c1529";
+export const mono = "__Roboto_Mono_fdc593, __Roboto_Mono_Fallback_fdc593";
 
 // MUI theme
 const theme = createTheme({
   palette: {
     mode: 'dark',
+    common: {
+      black: '#1a1a1a',
+      white: '#dadada',
+    },
     primary: {
       main: color['vibrantBlue'],
     },

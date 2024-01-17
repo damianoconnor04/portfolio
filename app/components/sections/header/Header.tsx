@@ -9,6 +9,7 @@ import Container from '@mui/material/Container'
 import CustomButton from '../../global/CustomButton'
 import useMediaQuery from '@mui/material/useMediaQuery'
 import { GitHub, LinkedIn, FileDownloadOutlined, Email } from '@mui/icons-material'
+import Links from '../../global/navigation/Links'
 
 const Header = () => {
   // show/hide header btns
@@ -39,15 +40,18 @@ const Header = () => {
       }}
       onMouseEnter={() => setOpacity(1)}
       onMouseLeave={() => setOpacity(0)}
-      sx={{ py: isTablet ? 1 : 3, position: 'relative', overflow: 'hidden', height: '100%', borderBottom: '2px solid #2b2b2bbb' }}
+      sx={{ py: isTablet ? 1 : 2, position: 'relative', overflow: 'hidden', height: '100%', borderBottom: '2px solid #2b2b2bbb' }}
     >
       <Container>
         <Stack gap={2} sx={{ py: 2.5, zIndex: 1, }}>
-          <Typography variant='h1'>Damian O&apos;Connor</Typography>
+          <Stack direction='row' justifyContent='space-between'>
+            <Typography variant='h1'>Damian O&apos;Connor</Typography>
+            {!isTablet && <Links />}
+          </Stack>
           <Typography variant='h5' sx={{ mt: -1, textWrap: 'pretty', zIndex: 1 }}>Front End Developer at Leap Brands</Typography>
-          <Typography variant='body2' sx={{ textWrap: 'pretty', zIndex: 1, cursor: 'default', }}>I bring ideas to life through elegant, responsive web solutions— pixel by pixel.</Typography>
+          <Typography variant='body2' sx={{ textWrap: 'pretty', zIndex: 1, cursor: 'default', mt: -0.5 }}>I bring ideas to life through elegant, responsive web solutions— pixel by pixel.</Typography>
         </Stack>
-        <Stack direction='row' justifyContent='space-between' alignItems='center' sx={{ mt: -0.5, pb: isTablet ? 1 : 3, }}>
+        <Stack direction='row' justifyContent='space-between' alignItems='center' sx={{ pb: isTablet ? 1 : 2, }}>
           <Stack direction='row' gap={1.5}>
             <CustomIconButton><GitHub /></CustomIconButton>
             <CustomIconButton><LinkedIn /></CustomIconButton>

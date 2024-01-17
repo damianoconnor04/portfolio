@@ -1,27 +1,26 @@
-'use client'
-import React from 'react'
-import Box from '@mui/material/Box'
-import Header from './components/sections/header/Header'
-import Skills from './components/sections/skills/Skills'
-import Container from '@mui/material/Container'
-import Projects from './components/sections/projects/Projects'
-import { alpha } from '@mui/material'
-import Links from './components/sections/header/Links'
+import React from 'react';
+import Box from '@mui/material/Box';
+import Header from './components/sections/header/Header';
+import Skills from './components/sections/skills/Skills';
+import Container from '@mui/material/Container';
+import Projects from './components/sections/projects/Projects';
+import Divider from '@mui/material/Divider';
+import useMediaQuery from '@mui/material/useMediaQuery';
+import Links from './components/global/navigation/Links';
+import Navigation from './components/global/navigation/Navigation';
 
 const App = () => {
   return (
-    <Box>
+    <Box sx={{ overflow: 'hidden' }}>
       <Header />
-
-      <Container>
-        <Box sx={{ border: '2px solid', borderColor: (theme) => alpha(theme.palette.grey[800], 0.3), }}>
-          <Links />
-          <Skills />
-          <Projects />
-        </Box>
+      <Container sx={{ width: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', }}>
+        <Navigation />
+        <Skills />
+        <Divider orientation='vertical' sx={{ height: '8rem' }} />
+        <Projects />
       </Container>
     </Box>
-  )
-}
+  );
+};
 
-export default App
+export default App;
