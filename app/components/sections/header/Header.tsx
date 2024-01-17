@@ -11,14 +11,14 @@ import Link from 'next/link'
 import useMediaQuery from '@mui/material/useMediaQuery'
 import IconButton from '@mui/material/IconButton'
 import { sections } from '../skills/_content'
-import { GitHub, LinkedIn, Twitter, DragHandle, FileDownloadOutlined } from '@mui/icons-material'
+import { GitHub, LinkedIn, DragHandle, FileDownloadOutlined, Email } from '@mui/icons-material'
 
 const Header = () => {
   // show/hide header btns
   const isTablet = useMediaQuery('(max-width: 960px)');
 
   // state
-  const [mousePosition, setMousePosition] = React.useState<{x: number, y: number}>({ x: 0, y: 0 });
+  const [mousePosition, setMousePosition] = React.useState<{ x: number, y: number }>({ x: 0, y: 0 });
   const [opacity, setOpacity] = React.useState<number>(0);
   const [windowWidth, setWindowWidth] = React.useState<number>(0);
 
@@ -63,13 +63,13 @@ const Header = () => {
               )}
           </Stack>
           <Typography variant='h5' sx={{ mt: -1, textWrap: 'pretty', zIndex: 1 }}>Front End Developer at Leap Brands</Typography>
-          <Typography variant='body2' sx={{ textWrap: 'pretty', zIndex: 1 }}>I bring ideas to life through elegant, responsive web solutions— pixel by pixel.</Typography>
+          <Typography variant='body2' sx={{ textWrap: 'pretty', zIndex: 1, cursor: 'default', }}>I bring ideas to life through elegant, responsive web solutions— pixel by pixel.</Typography>
         </Stack>
         <Stack direction='row' justifyContent='space-between' alignItems='center' sx={{ mt: -0.5 }}>
           <Stack direction='row' gap={1.5}>
             <CustomIconButton><GitHub /></CustomIconButton>
             <CustomIconButton><LinkedIn /></CustomIconButton>
-            <CustomIconButton><Twitter /></CustomIconButton>
+            <CustomIconButton><Email /></CustomIconButton>
           </Stack>
           {!isTablet && <CustomButton icon={<FileDownloadOutlined />}>Resume</CustomButton>}
         </Stack>

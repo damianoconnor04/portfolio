@@ -69,6 +69,7 @@ const theme = createTheme({
         lineHeight: '3.25rem',
       },
       fontWeight: 700,
+      cursor: 'default',
     },
     h2: {
       color: color['white'],
@@ -79,6 +80,7 @@ const theme = createTheme({
         lineHeight: '2.5rem',
       },
       letterSpacing: '-.025em',
+      cursor: 'default',
     },
     h3: {
       fontFamily: poppins,
@@ -95,6 +97,7 @@ const theme = createTheme({
       },
       fontWeight: 600,
       letterSpacing: '.025em',
+      cursor: 'default',
     },
     h4: {
       color: color['white'],
@@ -104,6 +107,7 @@ const theme = createTheme({
         fontSize: '1.5rem',
         lineHeight: '2rem',
       },
+      cursor: 'default',
     },
     h5: {
       color: color['white'],
@@ -114,12 +118,14 @@ const theme = createTheme({
         lineHeight: '1.75rem',
       },
       fontWeight: 500,
+      cursor: 'default',
     },
     h6: {
       color: color['white'],
       fontSize: '1rem',
       lineHeight: '1.5rem',
       fontWeight: 500,
+      cursor: 'default',
     },
     // button
     button: {
@@ -178,9 +184,9 @@ const theme = createTheme({
 type ThemeProps = { children: React.ReactNode };
 export const ThemeContext: React.FC<ThemeProps> = ({ children }) => {
   return (
-      <ThemeProvider theme={theme}>
-        <CssBaseline />
-        {children}
-      </ThemeProvider>
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      {children}
+    </ThemeProvider>
   );
 };

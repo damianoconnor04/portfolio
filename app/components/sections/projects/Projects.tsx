@@ -6,6 +6,7 @@ import Typography from '@mui/material/Typography'
 import CustomTextButton from '../../global/CustomTextButton'
 import useTheme from '@mui/material/styles/useTheme'
 import { alpha, useMediaQuery } from '@mui/material'
+import ProjectsMap from './ProjectsMap'
 
 const Projects = () => {
   const theme = useTheme()
@@ -13,12 +14,12 @@ const Projects = () => {
 
   return (
     <>
-        <Box className='section' sx={{ p: 3, px: 0, }}>
-            <Stack direction='column' gap={3} sx={{ py: 2, backgroundColor: (theme) => alpha(theme.palette.grey[900], 0.3), border: '1px solid', borderColor: (theme) => alpha(theme.palette.grey[800], 0.3), borderRadius: '16px' }}>
-              <Typography variant='h3' sx={{ textAlign: 'center', cursor: 'default' }}>Projects</Typography>
-
-            </Stack>
-        </Box>
+      <Box className='section' sx={{ p: 3, px: 0, }}>
+        <Stack direction='column' gap={3} sx={{ py: 2, backgroundColor: (theme) => alpha(theme.palette.grey[900], 0.3), border: '1px solid', borderColor: (theme) => alpha(theme.palette.grey[800], 0.3), borderRadius: '16px' }}>
+          <Typography variant='h3' sx={{ textAlign: 'center', cursor: 'default' }}>Projects</Typography>
+          <ProjectsMap />
+        </Stack>
+      </Box>
     </>
   )
 }

@@ -10,14 +10,10 @@ interface SkewedGridProps {
 const SkewedGrid: React.FC<SkewedGridProps> = ({ opacity, mousePosition }) => {
   const isTablet = useMediaQuery('(max-width: 960px)');
   const isMobile = useMediaQuery('(max-width: 600px)');
-  const totalSquares = isMobile ? 24 : isTablet ? 40 : 64;
-  const rows = 4;
-
-  // TODO: hovering over grid changes nearby squares' border color to lighter shade
-  // TODO: fix grid height to fill header
+  const totalSquares = isMobile ? 48 : isTablet ? 80 : 128;
+  const rows = 8;
 
   return (
-    // perspective parent
     <Box
       sx={{
         position: 'absolute',
@@ -28,11 +24,11 @@ const SkewedGrid: React.FC<SkewedGridProps> = ({ opacity, mousePosition }) => {
         placeItems: 'center'
       }}
     >
-     {/* grid parent */}
+      {/* grid parent */}
       <Box
         sx={{
           transform: 'rotateX(22.5deg)', // tilt upward
-          height: '100%',
+          height: '200%',
           width: '200%', // fill screen
           display: 'grid',
           position: 'relative',
@@ -49,21 +45,20 @@ const SkewedGrid: React.FC<SkewedGridProps> = ({ opacity, mousePosition }) => {
             sx={{
               pointerEvents: 'none',
               backgroundColor: 'transparent',
-              border: `1px solid ${
-                index < totalSquares / rows
-                    ? '#ffffff08' // back row
-                    : index < (totalSquares / rows) * 2
-                    ? '#ffffff0a'
-                    : index < (totalSquares / rows) * 3
+              border: `1px solid ${index < totalSquares / rows
+                ? '#ffffff08' // back row
+                : index < (totalSquares / rows) * 2
+                  ? '#ffffff0a'
+                  : index < (totalSquares / rows) * 3
                     ? '#ffffff0b'
                     : '#ffffff10' // front row
-              }`,
+                }`,
             }}
           />
         ))}
 
         {/* hover gradient */}
-        <Box sx={{ position: 'absolute', width: '100%', height: '100%', opacity: opacity, transition: (theme) => theme.transitions.create('opacity', { duration: theme.transitions.duration.standard, easing: theme.transitions.easing.easeOut }), background: `radial-gradient(800px circle at ${mousePosition.x}px ${mousePosition.y}px, #ffffff10, transparent 60%)`, }} />
+        {!isMobile && <Box sx={{ position: 'absolute', width: '100%', height: '100%', opacity: opacity, transition: (theme) => theme.transitions.create('opacity', { duration: theme.transitions.duration.standard, easing: theme.transitions.easing.easeOut }), background: `radial-gradient(800px circle at ${mousePosition.x}px ${mousePosition.y}px, #ffffff10, transparent 60%)`, }} />}
       </Box>
     </Box>
   );
