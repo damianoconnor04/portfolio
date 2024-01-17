@@ -64,6 +64,10 @@ const theme = createTheme({
       color: color['white'],
       fontSize: '2.25rem',
       lineHeight: '2.5rem',
+      '@media (max-width:600px)': {
+        fontSize: '2rem',
+        lineHeight: '2.25rem',
+      },
       '@media (min-width:960px)': {
         fontSize: '3rem',
         lineHeight: '3.25rem',

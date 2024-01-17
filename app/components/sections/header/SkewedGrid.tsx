@@ -8,9 +8,11 @@ interface SkewedGridProps {
   mousePosition: { x: number; y: number };
 }
 const SkewedGrid: React.FC<SkewedGridProps> = ({ opacity, mousePosition }) => {
-  const isTablet = useMediaQuery('(max-width: 960px)');
   const isMobile = useMediaQuery('(max-width: 600px)');
-  const totalSquares = isMobile ? 48 : isTablet ? 80 : 128;
+  const isTablet = useMediaQuery('(max-width: 960px)');
+  const isDesktop = useMediaQuery('(max-width: 1360px)');
+  const isLargeDesktop = useMediaQuery('(max-width: 1760px)');
+  const totalSquares = isMobile ? 48 : isTablet ? 72 : isDesktop ? 112 : isLargeDesktop ? 144 : 176;
   const rows = 8;
 
   return (
@@ -32,7 +34,7 @@ const SkewedGrid: React.FC<SkewedGridProps> = ({ opacity, mousePosition }) => {
           width: '200%', // fill screen
           display: 'grid',
           position: 'relative',
-          gridTemplateColumns: isMobile ? 'repeat(6,1fr)' : isTablet ? 'repeat(10,1fr)' : 'repeat(16,1fr)',
+          gridTemplateColumns: isMobile ? 'repeat(6,1fr)' : isTablet ? 'repeat(9,1fr)' : isDesktop ? 'repeat(14,1fr)' : isLargeDesktop ? 'repeat(18,1fr)' : 'repeat(22,1fr)',
           gridTemplateRows: `repeat(${rows},1fr)`,
           background: 'linear-gradient(-2deg, #ffffff15 0%, transparent 60%)',
           marginTop: '-12px'

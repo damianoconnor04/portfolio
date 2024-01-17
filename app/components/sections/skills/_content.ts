@@ -21,7 +21,7 @@ export const skillsContent = {
   Enhance: [
     {
       category: 'Optimization',
-      tools: ['Next SEO', 'Google Search Console', 'Lighthouse', 'Axe'],
+      tools: ['Lighthouse', 'Axe', 'Next SEO', 'Google Search Console'],
     },
     {
       category: 'Testing',

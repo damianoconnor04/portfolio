@@ -14,8 +14,8 @@ const Projects = () => {
 
   return (
     <>
-      <Box className='section' sx={{ p: 3, px: 0, }}>
-        <Stack direction='column' gap={3} sx={{ py: 2, backgroundColor: (theme) => alpha(theme.palette.grey[900], 0.3), border: '1px solid', borderColor: (theme) => alpha(theme.palette.grey[800], 0.3), borderRadius: '16px' }}>
+      <Box className='section' sx={{ py: 5, px: 4, }}>
+        <Stack direction='column' gap={3} sx={{ py: 2 }}>
           <Typography variant='h3' sx={{ textAlign: 'center', cursor: 'default' }}>Projects</Typography>
           <ProjectsMap />
         </Stack>

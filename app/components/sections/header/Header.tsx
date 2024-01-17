@@ -7,11 +7,8 @@ import CustomIconButton from '../../global/CustomIconButton'
 import SkewedGrid from './SkewedGrid'
 import Container from '@mui/material/Container'
 import CustomButton from '../../global/CustomButton'
-import Link from 'next/link'
 import useMediaQuery from '@mui/material/useMediaQuery'
-import IconButton from '@mui/material/IconButton'
-import { sections } from '../skills/_content'
-import { GitHub, LinkedIn, DragHandle, FileDownloadOutlined, Email } from '@mui/icons-material'
+import { GitHub, LinkedIn, FileDownloadOutlined, Email } from '@mui/icons-material'
 
 const Header = () => {
   // show/hide header btns
@@ -42,30 +39,15 @@ const Header = () => {
       }}
       onMouseEnter={() => setOpacity(1)}
       onMouseLeave={() => setOpacity(0)}
-      sx={{ p: 3, position: 'relative', overflow: 'hidden', height: '100%', borderBottom: '2px solid #2b2b2bbb' }}
+      sx={{ py: isTablet ? 1 : 3, position: 'relative', overflow: 'hidden', height: '100%', borderBottom: '2px solid #2b2b2bbb' }}
     >
       <Container>
         <Stack gap={2} sx={{ py: 2.5, zIndex: 1, }}>
-          <Stack sx={{ zIndex: 1, }} direction='row' justifyContent='space-between' alignItems='center'>
-            <Typography variant='h1'>Damian O&apos;Connor</Typography>
-            {isTablet
-              ? (
-                <IconButton sx={{ color: (theme) => theme.palette.text.secondary, outline: '1px solid', outlineColor: (theme) => theme.palette.grey[800], p: 0.75 }}><DragHandle /></IconButton>
-              )
-              : (
-                <Stack direction='row' justifyContent='space-between' alignItems='center' gap={2}>
-                  {sections.map((section, idx) =>
-                    <Typography key={idx} variant='body2' sx={{ transition: (theme) => theme.transitions.create('color', { duration: theme.transitions.duration.shorter }), '&:hover': { color: (theme) => theme.palette.text.primary } }}>
-                      <Link href="#" >{section}</Link>
-                    </Typography>
-                  )}
-                </Stack>
-              )}
-          </Stack>
+          <Typography variant='h1'>Damian O&apos;Connor</Typography>
           <Typography variant='h5' sx={{ mt: -1, textWrap: 'pretty', zIndex: 1 }}>Front End Developer at Leap Brands</Typography>
           <Typography variant='body2' sx={{ textWrap: 'pretty', zIndex: 1, cursor: 'default', }}>I bring ideas to life through elegant, responsive web solutions— pixel by pixel.</Typography>
         </Stack>
-        <Stack direction='row' justifyContent='space-between' alignItems='center' sx={{ mt: -0.5 }}>
+        <Stack direction='row' justifyContent='space-between' alignItems='center' sx={{ mt: -0.5, pb: isTablet ? 1 : 3, }}>
           <Stack direction='row' gap={1.5}>
             <CustomIconButton><GitHub /></CustomIconButton>
             <CustomIconButton><LinkedIn /></CustomIconButton>
