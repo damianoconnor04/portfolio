@@ -8,12 +8,13 @@ import { useIsMobile } from '@/hooks/useIsMobile';
 
 type SkillsMapProps = { activeSkill: skillsType };
 const SkillsMap: React.FC<SkillsMapProps> = ({ activeSkill }) => {
+  const { isMobile } = useIsMobile();
+  if (isMobile === undefined) return null;
+
   const categories = skillsContent[activeSkill];
   if (!categories) return null;
 
-  const { isMobile } = useIsMobile();
-  if (isMobile === undefined) return null;
-  
+
   // TODO: add windows settings border effect to chips
 
   return (
@@ -37,7 +38,7 @@ const SkillsMap: React.FC<SkillsMapProps> = ({ activeSkill }) => {
           </Box>
 
           {isMobile && <Divider orientation='horizontal' sx={{ width: '100%' }} />}
-          {!isMobile && 
+          {!isMobile &&
             <Box sx={{ gridColumn: '2 / span 1', display: 'flex', alignItems: 'center' }}>
               <Divider orientation='vertical' flexItem />
             </Box>
