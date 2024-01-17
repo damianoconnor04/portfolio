@@ -23,7 +23,7 @@ const Projects = () => {
           filter: 'blur(100px)',
           width: '600px',
           height: '600px',
-          background: (theme) =>
+          backgroundImage: (theme) =>
             `radial-gradient(at 0 0, 
             ${alpha(theme.palette.primary.light, 0.25)}, 
             ${alpha(theme.palette.primary.main, 0.1)}, 

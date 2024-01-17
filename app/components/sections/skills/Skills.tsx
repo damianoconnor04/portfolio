@@ -32,7 +32,7 @@ const Skills = () => {
           width: '400px',
           transform: 'rotate(45deg)',
           height: '500px',
-          background: (theme) =>
+          backgroundImage: (theme) =>
             `radial-gradient(at 0 0, 
               ${alpha(theme.palette.secondary.dark, 0.3)}, 
               ${alpha(theme.palette.secondary.main, 0.2)}, 
