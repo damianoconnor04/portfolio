@@ -24,13 +24,11 @@ const Projects = () => {
           width: '600px',
           height: '600px',
           background: (theme) =>
-            `radial-gradient(at 0 0, ${alpha(
-              theme.palette.primary.light,
-              0.25
-            )}, ${alpha(theme.palette.primary.main, 0.1)}, ${alpha(
-              theme.palette.primary.dark,
-              0.0
-            )})`,
+            `radial-gradient(at 0 0, 
+            ${alpha(theme.palette.primary.light, 0.25)}, 
+            ${alpha(theme.palette.primary.main, 0.1)}, 
+            ${alpha(theme.palette.primary.dark, 0)}
+            )`,
         }}
       />
       <Stack direction='column' gap={3} sx={{ py: 2 }}>

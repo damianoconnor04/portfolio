@@ -36,7 +36,7 @@ const SkewedGrid: React.FC<SkewedGridProps> = ({ opacity, mousePosition }) => {
           position: 'relative',
           gridTemplateColumns: isMobile ? 'repeat(6,1fr)' : isTablet ? 'repeat(9,1fr)' : isDesktop ? 'repeat(14,1fr)' : isLargeDesktop ? 'repeat(18,1fr)' : 'repeat(22,1fr)',
           gridTemplateRows: `repeat(${rows},1fr)`,
-          background: 'linear-gradient(-2deg, #ffffff15 0%, transparent 60%)',
+          background: 'linear-gradient(-2deg, #ffffff15 0%, rgba(0,0,0,0) 60%)',
           marginTop: '-12px'
         }}
       >
@@ -46,7 +46,7 @@ const SkewedGrid: React.FC<SkewedGridProps> = ({ opacity, mousePosition }) => {
             key={index}
             sx={{
               pointerEvents: 'none',
-              backgroundColor: 'transparent',
+              backgroundColor: 'rgba(0,0,0,0)',
               border: `1px solid ${index < totalSquares / rows
                 ? '#ffffff08' // back row
                 : index < (totalSquares / rows) * 2
@@ -60,7 +60,7 @@ const SkewedGrid: React.FC<SkewedGridProps> = ({ opacity, mousePosition }) => {
         ))}
 
         {/* hover gradient */}
-        {!isMobile && <Box sx={{ position: 'absolute', width: '100%', height: '100%', opacity: opacity, transition: (theme) => theme.transitions.create('opacity', { duration: theme.transitions.duration.standard, easing: theme.transitions.easing.easeOut }), background: `radial-gradient(800px circle at ${mousePosition.x}px ${mousePosition.y}px, #ffffff10, transparent 60%)`, }} />}
+        {!isMobile && <Box sx={{ position: 'absolute', width: '100%', height: '100%', opacity: opacity, transition: (theme) => theme.transitions.create('opacity', { duration: theme.transitions.duration.standard, easing: theme.transitions.easing.easeOut }), background: `radial-gradient(800px circle at ${mousePosition.x}px ${mousePosition.y}px, #ffffff10, rgba(0,0,0,0) 60%)`, }} />}
       </Box>
     </Box>
   );

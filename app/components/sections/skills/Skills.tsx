@@ -33,13 +33,11 @@ const Skills = () => {
           transform: 'rotate(45deg)',
           height: '500px',
           background: (theme) =>
-            `radial-gradient(at 0 0, ${alpha(
-              theme.palette.secondary.dark,
-              0.3
-            )}, ${alpha(theme.palette.secondary.main, 0.2)}, ${alpha(
-              theme.palette.secondary.light,
-              0.1
-            )})`,
+            `radial-gradient(at 0 0, 
+              ${alpha(theme.palette.secondary.dark, 0.3)}, 
+              ${alpha(theme.palette.secondary.main, 0.2)}, 
+              ${alpha(theme.palette.secondary.light,0.1)}
+            )`,
         }}
       />
       <Stack direction='column' gap={3}>
