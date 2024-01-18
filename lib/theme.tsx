@@ -39,6 +39,9 @@ const theme = createTheme({
     secondary: {
       main: color['darkBlue'],
     },
+    info: { //using this as mock 'tertiary'
+      main: color['purple'],
+    },
     text: {
       primary: color['white'],
     },
@@ -50,9 +53,6 @@ const theme = createTheme({
     },
     warning: {
       main: color['orange'],
-    },
-    info: {
-      main: color['lightBlue'],
     },
     background: {
       default: color['black'],

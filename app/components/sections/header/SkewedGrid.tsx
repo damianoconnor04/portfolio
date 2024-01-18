@@ -8,10 +8,10 @@ interface SkewedGridProps {
   mousePosition: { x: number; y: number };
 }
 const SkewedGrid: React.FC<SkewedGridProps> = ({ opacity, mousePosition }) => {
-  const { isMobile, isTablet, isDesktop, isLargeDesktop }  = useIsMobile();
+  const { isMobile, isTablet, isDesktop, isLargeDesktop } = useIsMobile();
   if (isMobile === undefined || isTablet === undefined || isDesktop === undefined || isLargeDesktop === undefined) return null;
 
-  const totalSquares = isMobile ? 48 : isTablet ? 72 : isDesktop ? 112 : isLargeDesktop ? 144 : 176;
+  const totalSquares = isMobile ? 48 : isTablet ? 64 : isDesktop ? 96 : isLargeDesktop ? 128 : 160;
   const rows = 8;
 
   return (
@@ -33,10 +33,10 @@ const SkewedGrid: React.FC<SkewedGridProps> = ({ opacity, mousePosition }) => {
           width: '200%', // fill screen
           display: 'grid',
           position: 'relative',
-          gridTemplateColumns: isMobile ? 'repeat(6,1fr)' : isTablet ? 'repeat(9,1fr)' : isDesktop ? 'repeat(14,1fr)' : isLargeDesktop ? 'repeat(18,1fr)' : 'repeat(22,1fr)',
+          gridTemplateColumns: isMobile ? 'repeat(6,1fr)' : isTablet ? 'repeat(8,1fr)' : isDesktop ? 'repeat(12,1fr)' : isLargeDesktop ? 'repeat(16,1fr)' : 'repeat(20,1fr)',
           gridTemplateRows: `repeat(${rows},1fr)`,
           background: 'linear-gradient(-2deg, #ffffff15 0%, rgba(0,0,0,0) 60%)',
-          marginTop: '-12px'
+          marginTop: '-15px'
         }}
       >
         {/* grid items */}

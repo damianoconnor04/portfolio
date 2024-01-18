@@ -34,15 +34,15 @@ const SkillsMap: React.FC<SkillsMapProps> = ({ activeSkill }) => {
               alignItems: 'center',
               justifyContent: isMobile ? 'center' : 'flex-end',
             }}>
-            <Typography variant='h5'>{category}</Typography>
+            <Typography variant='h4'>{category}</Typography>
           </Box>
 
-          {isMobile && <Divider orientation='horizontal' sx={{ width: '100%' }} />}
+          {/* {isMobile && <Divider orientation='horizontal' sx={{ width: '100%' }} />}
           {!isMobile &&
             <Box sx={{ gridColumn: '2 / span 1', display: 'flex', alignItems: 'center' }}>
               <Divider orientation='vertical' flexItem />
             </Box>
-          }
+          } */}
 
           <Box
             sx={{
@@ -58,6 +58,7 @@ const SkillsMap: React.FC<SkillsMapProps> = ({ activeSkill }) => {
                 key={tool}
                 label={tool}
                 sx={{
+                  fontSize: '1rem',
                   fontWeight: 600,
                   borderRadius: '6px',
                   backgroundColor: (theme) => theme.palette.grey[900],

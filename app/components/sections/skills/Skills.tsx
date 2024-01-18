@@ -22,7 +22,7 @@ const Skills = () => {
   if (isTablet === undefined || isMobile === undefined) return null;
 
   return (
-    <Box className='section' sx={{ py: 6, px: 4, position: 'relative', width: '100%', }}>
+    <Box component='section' sx={{ py: 6, px: 4, position: 'relative', width: '100%', }}>
       <Box
         sx={{
           content: '""',
@@ -59,7 +59,7 @@ const Skills = () => {
             variant='h3'
             sx={{
               textAlign: 'center',
-              textShadow: `1px 1px 6px ${theme.palette.secondary.dark}`,
+              textShadow: `1px 1px 5px ${theme.palette.secondary.dark}`,
               color: theme.palette.text.primary,
             }}>
             Workflow

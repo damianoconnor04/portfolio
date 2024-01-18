@@ -6,6 +6,8 @@ import Container from '@mui/material/Container';
 import Projects from './components/sections/projects/Projects';
 import Divider from '@mui/material/Divider';
 import Navigation from './components/global/navigation/Navigation';
+import Contact from './components/sections/contact/Contact';
+import Footer from './components/sections/footer/Footer';
 
 const App = () => {
   return (
@@ -23,6 +25,9 @@ const App = () => {
         <Skills />
         <Divider orientation='vertical' sx={{ height: '8rem' }} />
         <Projects />
+        <Divider orientation='vertical' sx={{ height: '8rem' }} />
+        <Contact />
+        <Footer />
       </Container>
     </Box>
   );

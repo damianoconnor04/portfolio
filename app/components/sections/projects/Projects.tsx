@@ -13,9 +13,7 @@ const Projects = () => {
   const { isMobile } = useIsMobile();
 
   return (
-    <Box
-      className='section'
-      sx={{ py: 6, px: 4, width: '100%', position: 'relative' }}>
+    <Box component='section' sx={{ py: 6, px: 4, position: 'relative', width: '100%', }}>
       <Box
         sx={{
           position: 'absolute',
@@ -51,7 +49,7 @@ const Projects = () => {
             sx={{
               textAlign: 'center',
               cursor: 'default',
-              textShadow: `1px 1px 4px ${theme.palette.primary.dark}`,
+              textShadow: `1px 1px 5px ${alpha(theme.palette.primary.dark, 0.8)}`,
               color: theme.palette.text.primary,
             }}
           >
