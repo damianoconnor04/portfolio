@@ -11,6 +11,7 @@ import { useIsMobile } from '@/hooks/useIsMobile';
 const Projects = () => {
   const theme = useTheme();
   const { isMobile } = useIsMobile();
+  if (isMobile === undefined) return null;
 
   return (
     <Box component='section' sx={{ py: 6, px: isMobile ? 0 : 4, position: 'relative', width: '100%', }}>
@@ -23,6 +24,7 @@ const Projects = () => {
           filter: 'blur(100px)',
           width: '600px',
           height: '600px',
+          pointerEvents: 'none',
           backgroundImage: (theme) =>
             `radial-gradient(at 0% 0%,
             ${alpha(theme.palette.primary.light, 0.25)}, 
@@ -48,7 +50,7 @@ const Projects = () => {
             sx={{
               textAlign: 'center',
               cursor: 'default',
-              textShadow: `1px 1px 5px ${alpha(theme.palette.primary.dark, 0.8)}`,
+              textShadow: `1px 1px 3px ${alpha(theme.palette.primary.dark, 0.8)}`,
               color: theme.palette.text.primary,
             }}
           >

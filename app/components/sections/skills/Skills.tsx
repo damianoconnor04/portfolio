@@ -33,6 +33,7 @@ const Skills = () => {
           width: '400px',
           transform: 'rotate(45deg)',
           height: '500px',
+          pointerEvents: 'none',
           backgroundImage: (theme) =>
             `radial-gradient(at 0% 0%, 
               ${alpha(theme.palette.secondary.dark, 0.3)}, 
@@ -41,7 +42,7 @@ const Skills = () => {
             )`,
         }}
       />
-      <Stack direction='column' gap={3}>
+      <Stack direction='column' gap={3} sx={{ zIndex: 1 }}>
         <Stack gap={1}>
           <Typography
             variant='h4'
@@ -57,7 +58,7 @@ const Skills = () => {
             variant='h3'
             sx={{
               textAlign: 'center',
-              textShadow: `1px 1px 5px ${theme.palette.secondary.dark}`,
+              textShadow: `1px 1px 3px ${theme.palette.secondary.dark}`,
               color: theme.palette.text.primary,
             }}>
             Workflow
