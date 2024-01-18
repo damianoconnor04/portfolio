@@ -73,7 +73,7 @@ const Contact = () => {
 
             <Typography variant='body2' sx={{ color: theme.palette.text.secondary, cursor: 'default', textAlign: isMobile ? 'center' : 'initial' }}>
               I&apos;m not currently looking for new opportunities, but&nbsp;
-              <Box component='a' role='button' aria-label='Send me an email' href='mailto:damianoconnor04@gmail.com' sx={{ color: theme.palette.info.main, textDecoration: 'underline', textUnderlineOffset: 2, zIndex: 999 }}>
+              <Box component='a' role='button' href='mailto:damianoconnor04@gmail.com' sx={{ color: theme.palette.info.main, textDecoration: 'underline', textUnderlineOffset: 2, zIndex: 999 }}>
                 my inbox
               </Box>
               &nbsp;is always open. Whether you have a question or just want to say hi, I&apos;ll try my best to get back to you!

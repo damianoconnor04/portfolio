@@ -25,7 +25,7 @@ const SkillsMap: React.FC<SkillsMapProps> = ({ activeSkill }) => {
         gap: 1,
         mt: -2,
       }}>
-      {categories.map(({ category, tools }, idx) => (
+      {categories.map(({ category, tools }) => (
         <React.Fragment key={category}>
           <Box
             sx={{
@@ -58,12 +58,18 @@ const SkillsMap: React.FC<SkillsMapProps> = ({ activeSkill }) => {
                 key={tool}
                 label={tool}
                 sx={{
-                  fontSize: '1rem',
                   fontWeight: 600,
                   borderRadius: '6px',
                   backgroundColor: (theme) => theme.palette.grey[900],
                   border: '1px solid',
                   borderColor: (theme) => theme.palette.grey[800],
+                  fontSize: '0.875rem !important',
+                  '@media(min-width:960px)': {
+                    fontSize: '1rem !important',
+                  },
+                  '@media(min-width:1400px)': {
+                    fontSize: '1.125rem !important',
+                  },
                 }}
               />
             ))}

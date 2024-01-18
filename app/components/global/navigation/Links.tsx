@@ -21,6 +21,7 @@ const Links = () => {
         <Link key={idx} href='#'>
           <Typography
             variant={isMobile ? 'subtitle1' : 'body2'}
+            component='h3'
             sx={{
               transition: (theme) =>
                 theme.transitions.create('color', {

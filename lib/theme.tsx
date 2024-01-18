@@ -187,7 +187,20 @@ const theme = createTheme({
           backgroundColor: color['white'],
         },
       }
-    }
+    },
+    MuiButtonBase: {
+      styleOverrides: {
+        root: {
+          fontSize: '1.125rem !important',
+          '@media(min-width:960px)': {
+            fontSize: '1.25rem !important',
+          },
+          '@media(min-width:1400px)': {
+            fontSize: '1.5rem !important',
+          },
+        }
+      }
+    },
   }
 });
 

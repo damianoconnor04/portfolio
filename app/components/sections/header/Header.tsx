@@ -7,9 +7,7 @@ import CustomIconButton from '../../global/CustomIconButton'
 import SkewedGrid from './SkewedGrid'
 import Container from '@mui/material/Container'
 import CustomButton from '../../global/CustomButton'
-import useMediaQuery from '@mui/material/useMediaQuery'
 import { GitHub, LinkedIn, FileDownloadOutlined, Email } from '@mui/icons-material'
-import Links from '../../global/navigation/Links'
 import { useIsMobile } from '@/hooks/useIsMobile'
 
 const Header = () => {
@@ -48,11 +46,11 @@ const Header = () => {
           <Stack direction='row' justifyContent='space-between'>
             <Typography variant='h1'>Damian O&apos;Connor</Typography>
           </Stack>
-          <Typography variant='h4' sx={{ mt: -1, textWrap: 'pretty', zIndex: 1 }}>Front End Developer at Leap Brands</Typography>
+          <Typography component='h2' variant='h4' sx={{ mt: -1, textWrap: 'pretty', zIndex: 1 }}>Front End Developer at Leap Brands</Typography>
           <Typography variant='body2' sx={{ textWrap: 'pretty', zIndex: 1, cursor: 'default', mt: -0.5 }}>I bring ideas to life through elegant, responsive web solutions— pixel by pixel.</Typography>
         </Stack>
         <Stack direction='row' justifyContent='space-between' alignItems='center' sx={{ pb: isTablet ? 1 : 2, }}>
-          <Stack direction='row' gap={1.5}>
+          <Stack direction='row' gap={2.5}>
             <CustomIconButton><GitHub /></CustomIconButton>
             <CustomIconButton><LinkedIn /></CustomIconButton>
             <CustomIconButton><Email /></CustomIconButton>

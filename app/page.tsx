@@ -1,17 +1,11 @@
-'use client'
 import React from 'react';
-import { useIsMobile } from '@/hooks/useIsMobile';
-import Skeleton from '@mui/material/Skeleton';
 import App from './App'
+import Box from '@mui/material/Box';
 
 const PageRender = () => {
-  const { isMobile, isTablet, isDesktop, isLargeDesktop } = useIsMobile();
-  if (isMobile === undefined || isTablet === undefined || isDesktop === undefined || isLargeDesktop === undefined) {
-    return <Skeleton /> // TODO: make good looking skeleton + loading anim
-  }
-  else {
-    return <App />
-  }
+  return <Box sx={{ height: '100%' }}>
+    <App />
+    </Box>
 };
 
 export default PageRender;
