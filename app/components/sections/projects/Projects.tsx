@@ -19,7 +19,7 @@ const Projects = () => {
         sx={{
           position: 'absolute',
           top: '0px',
-          left: isMobile ? '-150px' : '0px',
+          left: isMobile ? '-50px' : '0px',
           borderRadius: '50%',
           filter: 'blur(100px)',
           width: '600px',
@@ -50,7 +50,7 @@ const Projects = () => {
             sx={{
               textAlign: 'center',
               cursor: 'default',
-              textShadow: `1px 1px 3px ${alpha(theme.palette.primary.dark, 0.8)}`,
+              textShadow: `1px 1px 2px ${alpha(theme.palette.primary.dark, 0.6)}`,
               color: theme.palette.text.primary,
             }}
           >

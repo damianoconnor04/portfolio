@@ -58,7 +58,7 @@ const Skills = () => {
             variant='h3'
             sx={{
               textAlign: 'center',
-              textShadow: `1px 1px 3px ${theme.palette.secondary.dark}`,
+              textShadow: `1px 1px 2px ${alpha(theme.palette.secondary.dark, 0.8)}`,
               color: theme.palette.text.primary,
             }}>
             Workflow
