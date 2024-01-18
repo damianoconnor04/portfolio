@@ -11,6 +11,8 @@ import Stack from '@mui/material/Stack';
 import CustomLinkButton from '@/app/components/global/CustomLinkButton';
 import Link from 'next/link';
 import { useIsMobile } from '@/hooks/useIsMobile';
+import Image from 'next/image';
+import placeholder from '@/public/placeholder.webp';
 
 const ProjectsMap = () => {
   const [showAllTags, setShowAllTags] = React.useState(
@@ -30,14 +32,21 @@ const ProjectsMap = () => {
     <Stack gap={4}>
       {Object.entries(projectsContent).map(([projectName, tags]) => (
         <Container
-          maxWidth={isTablet ? 'xs' : 'sm'}
+          disableGutters={isTablet}
+          maxWidth={isTablet ? 'xs' : 'md'}
           key={projectName}
           sx={{
             maxHeight: showAllTags ? '1000px' : '0px',
-            transition: (theme) => theme.transitions.create(['border-color', 'max-height'], { duration: theme.transitions.duration.shortest, easing: theme.transitions.easing.sharp, }),
+            transition: (theme) =>
+              theme.transitions.create(['border-color', 'max-height'], {
+                duration: theme.transitions.duration.shortest,
+                easing: theme.transitions.easing.sharp,
+              }),
             backgroundColor: (theme) => alpha(theme.palette.common.black, 0.5),
             border: '1px solid',
-            borderColor: projectImgFocused[projectName] ? (theme) => alpha(theme.palette.primary.dark, 0.5) : (theme) => alpha(theme.palette.grey[800], 0.8),
+            borderColor: projectImgFocused[projectName]
+              ? (theme) => alpha(theme.palette.primary.dark, 0.5)
+              : (theme) => alpha(theme.palette.grey[800], 0.8),
             borderRadius: '9px',
             p: isTablet ? 0 : 2,
             overflow: 'hidden',
@@ -49,9 +58,14 @@ const ProjectsMap = () => {
               position: 'absolute',
               inset: 0,
               zIndex: -1,
-              transition: (theme) => theme.transitions.create('background-color', { duration: theme.transitions.duration.shortest, easing: theme.transitions.easing.sharp, }),
+              transition: (theme) =>
+                theme.transitions.create('background-color', {
+                  duration: theme.transitions.duration.shortest,
+                  easing: theme.transitions.easing.sharp,
+                }),
               ...(projectImgFocused[projectName] && {
-                backgroundColor: (theme) => alpha(theme.palette.background.default, 0.5),
+                backgroundColor: (theme) =>
+                  alpha(theme.palette.background.default, 0.5),
               }),
             },
           }}>
@@ -67,40 +81,50 @@ const ProjectsMap = () => {
                 }}>
                 <Link href='https://oconnorweb.dev' target='_blank'>
                   <Box
-                    component='img'
-                    src='/placeholder.webp'
-                    alt='placeholder'
-                    height='auto'
-                    width='100%'
                     display='block'
                     sx={{
                       borderTopLeftRadius: '11px',
                       borderTopRightRadius: '11px',
                       boxShadow: (theme) =>
-                        `0px 0px 15px ${alpha(theme.palette.primary.dark, 0.5)}`,
-                      transform: 'translateY(16px)',
-                      transition: (theme) =>
-                        theme.transitions.create('transform', {
-                          duration: theme.transitions.duration.shorter,
-                          easing: theme.transitions.easing.sharp,
-                        }),
-                      '&:hover': {
-                        transform: 'translateY(0px)',
-                      },
-                    }}
-                  />
+                        `0px 0px 15px ${alpha(
+                          theme.palette.primary.main,
+                          0.6
+                        )}`,
+                      // transform: 'translateY(16px)', better mobile performance w no anims, but less cool :(
+                      // transition: (theme) =>
+                      //   theme.transitions.create('transform', {
+                      //     duration: theme.transitions.duration.shorter,
+                      //     easing: theme.transitions.easing.sharp,
+                      //   }),
+                      // '&:hover': {
+                      //   transform: 'translateY(0px)',
+                      // },
+                    }}>
+                    <Image
+                      src={placeholder}
+                      alt='placeholder'
+                      objectFit='cover'
+                      objectPosition='center bottom'
+                      placeholder='blur'
+                      loading='eager'
+                      className='rounded-t-lg'
+                    />
+                  </Box>
                 </Link>
               </Box>
             )}
-            {isTablet && <Divider sx={{ borderColor: (theme) => theme.palette.common.white }} />}
-            <Box sx={{ p: isTablet ? 2 : 0 }}>
+            {isTablet && <Divider />}
+            <Box sx={{ p: isTablet ? 2 : 0, backgroundColor: isTablet ? (theme) => alpha(theme.palette.grey[800], 0.25) : 'initial' }}>
               <Typography variant='h4' width='100%'>
                 {projectName}
               </Typography>
               <Typography
                 variant='body1'
                 width='100%'
-                sx={{ color: (theme) => theme.palette.text.secondary, cursor: 'default' }}>
+                sx={{
+                  color: (theme) => theme.palette.text.secondary,
+                  cursor: 'default',
+                }}>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 Quisquam, voluptatum.
               </Typography>
@@ -163,11 +187,6 @@ const ProjectsMap = () => {
                     [projectName]: false,
                   }))
                 }
-                component='img'
-                src='/placeholder.webp'
-                alt='placeholder'
-                height='auto'
-                width='100%'
                 sx={{
                   borderRadius: '11px',
                   position: 'absolute',
@@ -180,8 +199,18 @@ const ProjectsMap = () => {
                       easing: theme.transitions.easing.sharp,
                     }),
                   zIndex: 2,
-                }}
-              />
+                }}>
+                <Image
+                  src={placeholder}
+                  alt='placeholder'
+                  placeholder='blur'
+                  fill
+                  objectFit='cover'
+                  objectPosition='left bottom'
+                  loading='eager'
+                  className='rounded-lg'
+                />
+              </Box>
             </Link>
           )}
         </Container>

@@ -2,8 +2,7 @@ import React from 'react'
 import type { Metadata } from 'next'
 import { ThemeContext } from '@/lib/theme'
 import './globals.css'
-import { Roboto_Mono, Rubik } from 'next/font/google'
-import { Poppins } from 'next/font/google'
+import { Roboto_Mono, Rubik, Poppins } from 'next/font/google'
 
 const rubik = Rubik({ subsets: ['latin'] })
 const poppins = Poppins({ weight: ['400'], subsets: ['latin'] })
