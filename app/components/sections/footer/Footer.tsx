@@ -8,16 +8,10 @@ import { East, GitHub } from '@mui/icons-material'
 
 const Footer = () => {
   return (
-    <Stack direction='row' alignItems='center' gap={1.5} mb={2}>
+    <Stack direction='row' alignItems='center' gap={1.5} mb={6}>
       <GitHub />
-      <Typography variant='subtitle2' sx={{ fontFamily: mono }}>
-        This website is open source.&nbsp;
-        <Box component='a' target='_blank' sx={{ color: (theme) => theme.palette.primary.main }} href='https://github.com/damianoconnor04/portfolio/issues/new/choose'>
-          Report a bug
-          <Box component='span'>
-            <East sx={{ fontSize: '1rem', ml: 0.625 }} />
-          </Box>
-        </Box>
+      <Typography variant='subtitle2' sx={{ fontFamily: mono, cursor: 'default' }}>
+        This website is <Box component='a' role='button' aria-label='open GitHub repository' sx={{ color: (theme) => theme.palette.primary.main }}>open source</Box>.
       </Typography>
     </Stack>
   )

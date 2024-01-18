@@ -13,26 +13,25 @@ const Projects = () => {
   const { isMobile } = useIsMobile();
 
   return (
-    <Box component='section' sx={{ py: 6, px: 4, position: 'relative', width: '100%', }}>
+    <Box component='section' sx={{ py: 6, px: isMobile ? 0 : 4, position: 'relative', width: '100%', }}>
       <Box
         sx={{
           position: 'absolute',
           top: '0px',
           left: isMobile ? '-150px' : '0px',
-          zIndex: -1,
           borderRadius: '50%',
           filter: 'blur(100px)',
           width: '600px',
           height: '600px',
           backgroundImage: (theme) =>
-            `radial-gradient(at 0 0, 
+            `radial-gradient(at 0% 0%,
             ${alpha(theme.palette.primary.light, 0.25)}, 
             ${alpha(theme.palette.primary.main, 0.1)}, 
-            ${alpha(theme.palette.primary.dark, 0)}
+            rgba(0,0,0,0)
             )`,
         }}
       />
-      <Stack direction='column' gap={3} sx={{ py: 2 }}>
+      <Stack direction='column' gap={3}>
         <Stack gap={1}>
           <Typography
             variant='h4'

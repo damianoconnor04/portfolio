@@ -6,10 +6,13 @@ import Stack from '@mui/material/Stack';
 import { sections } from '../../sections/skills/_content';
 import { alpha } from '@mui/material';
 import { mono } from '@/lib/theme';
+import { useIsMobile } from '@/hooks/useIsMobile';
 
 const Links = () => {
+  const { isMobile } = useIsMobile();
+
   return (
-    <Stack direction='row' justifyContent='center' alignItems='center' gap={5}
+    <Stack direction='row' justifyContent='center' alignItems='center' gap={isMobile ? 2 : 5} width='fit-content'
       sx={{
         p: 2.5, backgroundColor: (theme) => alpha(theme.palette.common.black, 0.5), backdropFilter: 'blur(2px)', border: '1px solid', borderColor: (theme) => alpha(theme.palette.grey[800], 0.8), borderRadius: '9px', zIndex: 1,
       }}
@@ -17,7 +20,7 @@ const Links = () => {
       {sections.map((section, idx) => (
         <Link key={idx} href='#'>
           <Typography
-            variant='body2'
+            variant={isMobile ? 'subtitle1' : 'body2'}
             sx={{
               transition: (theme) =>
                 theme.transitions.create('color', {

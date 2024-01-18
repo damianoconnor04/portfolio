@@ -9,28 +9,25 @@ import { mono } from '@/lib/theme';
 import { useIsMobile } from '@/hooks/useIsMobile';
 import { Warning } from '@mui/icons-material';
 import Divider from '@mui/material/Divider';
-import Link from '@mui/material/Link';
 
 const Contact = () => {
   const theme = useTheme();
-  const { isTablet } = useIsMobile();
+  const { isMobile, isTablet } = useIsMobile();
 
   return (
-    <Box className='section' sx={{ py: 6, px: 4, position: 'relative', width: '100%', }}>
+    <Box className='section' sx={{ py: 6, px: isMobile ? 0 : 4, position: 'relative', width: '100%', }}>
       <Box
         sx={{
-          content: '""',
           position: 'absolute',
           top: isTablet ? '-50px' : '-150%',
           left: isTablet ? '150px' : '65%',
-          zIndex: -1,
           borderRadius: '50%',
           filter: 'blur(100px)',
           width: '400px',
           transform: 'rotate(45deg)',
           height: '500px',
           backgroundImage: (theme) =>
-            `radial-gradient(at 0 0, 
+            `radial-gradient(at 0% 0%,
               ${alpha(theme.palette.info.dark, 0.3)}, 
               ${alpha(theme.palette.info.main, 0.2)}, 
               ${alpha(theme.palette.info.light, 0.1)}
@@ -61,7 +58,7 @@ const Contact = () => {
         </Stack>
 
         <Container maxWidth='md'>
-          <Stack direction='row' alignItems='center' gap={2} sx={{
+          <Stack direction={isMobile ? 'column' : 'row'} alignItems='center' gap={2} sx={{
             p: 1.5,
             borderRadius: '6px',
             backgroundColor: alpha(theme.palette.info.dark, 0.125),
@@ -69,8 +66,10 @@ const Contact = () => {
             borderColor: alpha(theme.palette.info.dark, 0.25),
           }}>
             <Warning color='warning' sx={{ fontSize: '2rem' }} />
-            <Divider orientation='vertical' flexItem sx={{ borderColor: alpha(theme.palette.info.dark, 0.25) }} />
-            <Typography variant='body2' sx={{ color: theme.palette.text.secondary, cursor: 'default' }}>
+
+            <Divider orientation={isMobile ? 'horizontal' : 'vertical'} flexItem sx={{ borderColor: alpha(theme.palette.info.dark, 0.25) }} />
+
+            <Typography variant='body2' sx={{ color: theme.palette.text.secondary, cursor: 'default', textAlign: isMobile ? 'center' : 'initial' }}>
               I&apos;m not currently looking for new opportunities, but&nbsp;
               <Box component='a' href='mailto:damianoconnor04@gmail.com' sx={{ color: theme.palette.info.main, textDecoration: 'underline', textUnderlineOffset: 2 }}>
                 my inbox

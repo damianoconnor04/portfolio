@@ -22,21 +22,19 @@ const Skills = () => {
   if (isTablet === undefined || isMobile === undefined) return null;
 
   return (
-    <Box component='section' sx={{ py: 6, px: 4, position: 'relative', width: '100%', }}>
+    <Box component='section' sx={{ py: 6, px: isMobile ? 0 : 4, position: 'relative', width: '100%', }}>
       <Box
         sx={{
-          content: '""',
           position: 'absolute',
           top: isTablet ? '-50px' : '25px',
           left: isTablet ? '150px' : '550px',
-          zIndex: -1,
           borderRadius: '50%',
           filter: 'blur(100px)',
           width: '400px',
           transform: 'rotate(45deg)',
           height: '500px',
           backgroundImage: (theme) =>
-            `radial-gradient(at 0 0, 
+            `radial-gradient(at 0% 0%, 
               ${alpha(theme.palette.secondary.dark, 0.3)}, 
               ${alpha(theme.palette.secondary.main, 0.2)}, 
               ${alpha(theme.palette.secondary.light, 0.1)}

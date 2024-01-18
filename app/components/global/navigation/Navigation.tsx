@@ -1,12 +1,12 @@
 import React from 'react'
 import Links from './Links';
-import Box from '@mui/material/Box';
+import Container from '@mui/material/Container';
 
 const Navigation = () => {
   return (
-    <Box sx={{ pt: 6 }}>
+    <Container sx={{ pt: 6, px: 0, display: 'grid', placeItems: 'center' }}>
       <Links />
-    </Box>
+    </Container>
   )
 }
 
