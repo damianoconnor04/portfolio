@@ -17,25 +17,9 @@ const Contact = () => {
 
   return (
     <Box className='section' sx={{ py: 6, px: isMobile ? 0 : 4, position: 'relative', width: '100%', }}>
-      <Box
-        sx={{
-          position: 'absolute',
-          top: isTablet ? '-50px' : '25px',
-          left: isTablet ? '150px' : '550px',
-          borderRadius: '50%',
-          filter: 'blur(100px)',
-          width: '400px',
-          transform: 'rotate(45deg)',
-          height: '500px',
-          pointerEvents: 'none',
-          backgroundImage: (theme) =>
-            `radial-gradient(at 0% 0%,
-              ${alpha(theme.palette.info.dark, 0.3)}, 
-              ${alpha(theme.palette.info.main, 0.2)}, 
-              ${alpha(theme.palette.info.light, 0.1)}
-            )`,
-        }}
-      />
+
+      <div className={`tertiary-radial-gradient absolute ${isTablet ? 'left-1/2 -top-[100px] rotate-45' : 'left-2/3 -top-[35px] -rotate-45'} rounded-full blur-3xl w-[400px] h-[500px] pointer-events-none`} />
+
       <Stack direction='column' gap={3}>
         <Stack gap={1}>
           <Typography

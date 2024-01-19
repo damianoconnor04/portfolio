@@ -17,7 +17,7 @@ type RootLayoutProps = { children: React.ReactNode }
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en">
-      <body className={poppins.className && rubik.className && robotoMono.className}>
+      <body className={poppins.className && rubik.className && robotoMono.className} suppressHydrationWarning>
         <ThemeContext>
           {children}
         </ThemeContext>

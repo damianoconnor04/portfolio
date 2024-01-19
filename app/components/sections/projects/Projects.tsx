@@ -15,24 +15,9 @@ const Projects = () => {
 
   return (
     <Box component='section' sx={{ py: 6, px: isMobile ? 0 : 4, position: 'relative', width: '100%', }}>
-      <Box
-        sx={{
-          position: 'absolute',
-          top: '0px',
-          left: isMobile ? '-50px' : '0px',
-          borderRadius: '50%',
-          filter: 'blur(100px)',
-          width: '600px',
-          height: '600px',
-          pointerEvents: 'none',
-          backgroundImage: (theme) =>
-            `radial-gradient(at 0% 0%,
-            ${alpha(theme.palette.primary.light, 0.25)}, 
-            ${alpha(theme.palette.primary.main, 0.1)}, 
-            rgba(0,0,0,0)
-            )`,
-        }}
-      />
+
+      <div className={`absolute top-0 ${isMobile ? 'left-[-50px]' : 'left-0'} primary-radial-gradient w-[600px] h-[600px] rounded-full blur-3xl pointer-events-none`} />
+
       <Stack direction='column' gap={3}>
         <Stack gap={1}>
           <Typography

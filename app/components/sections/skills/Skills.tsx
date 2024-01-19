@@ -13,35 +13,15 @@ import { useIsMobile } from '@/hooks/useIsMobile';
 
 const Skills = () => {
   const theme = useTheme();
-
   const [activeSkill, setActiveSkill] = React.useState<skillsType>('Design');
-  const activeBg = theme.palette.text.primary + '!important';
-  const activeColor = theme.palette.background.default + '!important';
-
   const { isMobile, isTablet } = useIsMobile();
   if (isTablet === undefined || isMobile === undefined) return null;
 
   return (
     <Box component='section' sx={{ py: 6, px: isMobile ? 0 : 4, position: 'relative', width: '100%', }}>
-      <Box
-        sx={{
-          position: 'absolute',
-          top: isTablet ? '-50px' : '25px',
-          left: isTablet ? '150px' : '550px',
-          borderRadius: '50%',
-          filter: 'blur(100px)',
-          width: '400px',
-          transform: 'rotate(45deg)',
-          height: '500px',
-          pointerEvents: 'none',
-          backgroundImage: (theme) =>
-            `radial-gradient(at 0% 0%, 
-              ${alpha(theme.palette.secondary.dark, 0.3)}, 
-              ${alpha(theme.palette.secondary.main, 0.2)}, 
-              ${alpha(theme.palette.secondary.light, 0.1)}
-            )`,
-        }}
-      />
+
+      <div className={`secondary-radial-gradient absolute ${isMobile ? '-top-[50px]' : 'top-[25px]'} left-1/2 rounded-full blur-3xl w-[400px] h-[500px] pointer-events-none rotate-[60deg]`} />
+
       <Stack direction='column' gap={3} sx={{ zIndex: 1 }}>
         <Stack gap={1}>
           <Typography
@@ -81,15 +61,16 @@ const Skills = () => {
               ariaLabel={`My ${skill} tools`}
               onClick={() => setActiveSkill(skill)}
               sx={{
+                backdropFilter: 'blur(3px)',
                 backgroundColor:
                   activeSkill === skill
-                    ? activeBg
-                    : theme.palette.background.default + '!important',
+                    ? alpha(theme.palette.text.primary, 1) + '!important'
+                    : alpha(theme.palette.background.default, 0.8) + '!important',
                 color:
                   activeSkill === skill
-                    ? activeColor
+                    ? theme.palette.background.default + '!important'
                     : theme.palette.text.secondary,
-                zIndex: 5,
+                zIndex: 1,
               }}>
               {skill}
             </CustomTextButton>

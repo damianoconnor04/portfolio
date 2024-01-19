@@ -3,8 +3,14 @@ export const skills: skillsType[] = ['Design', 'Build', 'Enhance', 'Deploy'];
 
 export const skillsContent = {
   Design: [
-    { category: 'Wireframes', tools: ['Figma', 'Adobe XD'] },
-    { category: 'Prototyping', tools: ['Storybook'] },
+    {
+      category: 'Graphics',
+      tools: ['Photoshop', 'Illustrator', 'Inkscape'],
+    },
+    {
+      category: 'Prototyping',
+      tools: ['Storybook', 'Framer', 'Figma', 'Sketch'],
+    },
   ],
 
   Build: [
@@ -20,21 +26,21 @@ export const skillsContent = {
 
   Enhance: [
     {
-      category: 'Optimization',
-      tools: ['Lighthouse', 'Axe', 'Next SEO', 'Google Search Console'],
-    },
-    {
       category: 'Testing',
       tools: ['Playwright', 'Jest', 'React Testing Library'],
+    },
+    {
+      category: 'Optimization',
+      tools: ['Axe', 'Next SEO', 'Google Search Console', 'Lighthouse'],
     },
   ],
 
   Deploy: [
+    { category: 'Local', tools: ['Nginx', 'Docker', 'Apache', 'Ubuntu'] },
     {
       category: 'Cloud',
       tools: ['AWS', 'Cloudflare', 'Vercel', 'GitHub Pages'],
     },
-    { category: 'Local', tools: ['Nginx', 'Docker', 'Apache', 'Ubuntu'] },
   ],
 };
 

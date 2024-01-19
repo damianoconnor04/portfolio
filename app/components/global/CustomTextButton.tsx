@@ -28,9 +28,15 @@ const CustomTextButton: React.FC<CustomTextButtonProps> = ({
       sx={{
         ...sx,
         textTransform: 'unset',
-        fontSize: '0.95rem',
         minWidth: 0,
         maxWidth: 'fit-content',
+        fontSize: '1.125rem',
+        '@media(min-width:960px)': {
+          fontSize: '1.25rem',
+        },
+        '@media(min-width:1400px)': {
+          fontSize: '1.5rem',
+        },
         py: 0.75,
         px: 1.75,
         scale: pressing ? 0.94 + '!important' : 1 + '!important',

@@ -103,8 +103,6 @@ const ProjectsMap = () => {
                     <Image
                       src={placeholder}
                       alt='placeholder'
-                      objectFit='cover'
-                      objectPosition='center bottom'
                       placeholder='blur'
                       loading='eager'
                       className='rounded-t-lg'
@@ -156,11 +154,8 @@ const ProjectsMap = () => {
                 </Stack>
               </Box>
               <CustomLinkButton
-                buttonSx={{
-                  mt: 1,
-                  zIndex: projectImgFocused[projectName] ? 0 : 2,
-                }}
                 ariaLabel={`View all tags for ${projectName} project`}
+                typographySx={{ mt: 1, }}
                 onClick={() => {
                   setShowAllTags((prevState) => ({
                     ...prevState,
@@ -205,10 +200,9 @@ const ProjectsMap = () => {
                   alt='placeholder'
                   placeholder='blur'
                   fill
-                  objectFit='cover'
-                  objectPosition='left bottom'
+                  sizes='100%'
                   loading='eager'
-                  className='rounded-lg'
+                  className='rounded-lg relative object-cover object-left-bottom'
                 />
               </Box>
             </Link>

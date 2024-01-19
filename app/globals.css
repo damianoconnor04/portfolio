@@ -2,7 +2,51 @@
 @tailwind components;
 @tailwind utilities;
 
-html { min-height: 100%; box-sizing: border-box }
+:root {
+  --color-primary-light: rgba(143, 221, 233, 0.25);
+  --color-primary-main: rgba(116, 213, 228, 0.1);
+  --color-primary-dark: rgba(81, 149, 159, 0);
+
+  --color-secondary-light: rgba(126, 154, 188, 0.35);
+  --color-secondary-main: rgba(94, 129, 172, 0.25);
+  --color-secondary-dark: rgba(65, 90, 120, 0.15);
+
+  --color-tertiary-light: rgba(195, 164, 189, 0.3);
+  --color-tertiary-main: rgba(180, 142, 173, 0.2);
+  --color-tertiary-dark: rgba(125, 99, 121, 0.1);
+}
+
+html {
+  min-height: 100%;
+  box-sizing: border-box
+}
 
 html,
-body { height: 100% }
+body {
+  height: 100%
+}
+
+
+.primary-radial-gradient {
+  background-image: -webkit-radial-gradient(at 0% 0%, var(--color-primary-light), var(--color-primary-main), var(--color-primary-dark));
+  background-image: -moz-radial-gradient(at 0% 0%, var(--color-primary-light), var(--color-primary-main), var(--color-primary-dark));
+  background-image: -ms-radial-gradient(at 0% 0%, var(--color-primary-light), var(--color-primary-main), var(--color-primary-dark));
+  background-image: -o-radial-gradient(at 0% 0%, var(--color-primary-light), var(--color-primary-main), var(--color-primary-dark));
+  background-image: radial-gradient(at 0% 0%, var(--color-primary-light), var(--color-primary-main), var(--color-primary-dark));
+}
+
+.secondary-radial-gradient {
+  background-image: -webkit-radial-gradient(at 0% 0%, var(--color-secondary-light), var(--color-secondary-main), var(--color-secondary-dark));
+  background-image: -moz-radial-gradient(at 0% 0%, var(--color-secondary-light), var(--color-secondary-main), var(--color-secondary-dark));
+  background-image: -ms-radial-gradient(at 0% 0%, var(--color-secondary-light), var(--color-secondary-main), var(--color-secondary-dark));
+  background-image: -o-radial-gradient(at 0% 0%, var(--color-secondary-light), var(--color-secondary-main), var(--color-secondary-dark));
+  background-image: radial-gradient(at 0% 0%, var(--color-secondary-light), var(--color-secondary-main), var(--color-secondary-dark));
+}
+
+.tertiary-radial-gradient {
+  background-image: -webkit-radial-gradient(at 0% 0%, var(--color-tertiary-light), var(--color-tertiary-main), var(--color-tertiary-dark));
+  background-image: -moz-radial-gradient(at 0% 0%, var(--color-tertiary-light), var(--color-tertiary-main), var(--color-tertiary-dark));
+  background-image: -ms-radial-gradient(at 0% 0%, var(--color-tertiary-light), var(--color-tertiary-main), var(--color-tertiary-dark));
+  background-image: -o-radial-gradient(at 0% 0%, var(--color-tertiary-light), var(--color-tertiary-main), var(--color-tertiary-dark));
+  background-image: radial-gradient(at 0% 0%, var(--color-tertiary-light), var(--color-tertiary-main), var(--color-tertiary-dark));
+}
