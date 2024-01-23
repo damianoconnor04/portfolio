@@ -12,6 +12,7 @@ import Navigation from './components/global/navigation/Navigation';
 import Contact from './components/sections/contact/Contact';
 import Footer from './components/sections/footer/Footer';
 import { useIsMobile } from '@/hooks/useIsMobile';
+import OneToMany from '@/app/components/global/OneToManyConnector';
 
 const App = () => {
   const { isMobile, isTablet, isDesktop, isLargeDesktop } = useIsMobile();
@@ -36,9 +37,9 @@ const App = () => {
         }}>
         <Navigation />
         <Skills />
-        <Divider orientation='vertical' sx={{ height: '8rem' }} />
+        <OneToMany />
         <Projects />
-        <Divider orientation='vertical' sx={{ height: '8rem' }} />
+        <OneToMany flipped />
         <Contact />
         <Footer />
       </Container>

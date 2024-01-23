@@ -35,7 +35,7 @@ const Projects = () => {
             sx={{
               textAlign: 'center',
               cursor: 'default',
-              textShadow: `1px 1px 2px ${alpha(theme.palette.primary.dark, 0.6)}`,
+              textShadow: `1px 1px 2px ${alpha(theme.palette.primary.dark, 0.25)}`,
               color: theme.palette.text.primary,
             }}
           >

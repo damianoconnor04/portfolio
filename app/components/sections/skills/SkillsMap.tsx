@@ -22,7 +22,7 @@ const SkillsMap: React.FC<SkillsMapProps> = ({ activeSkill }) => {
       sx={{
         display: 'grid',
         gridTemplateColumns: isMobile ? '1fr' : 'auto auto 1fr',
-        gap: 1,
+        gap: isMobile ? 0.5 : 1,
         mt: -2,
       }}>
       {categories.map(({ category, tools }) => (
@@ -37,18 +37,19 @@ const SkillsMap: React.FC<SkillsMapProps> = ({ activeSkill }) => {
             <Typography variant='h4'>{category}</Typography>
           </Box>
 
-          {/* {isMobile && <Divider orientation='horizontal' sx={{ width: '100%' }} />}
           {!isMobile &&
             <Box sx={{ gridColumn: '2 / span 1', display: 'flex', alignItems: 'center' }}>
               <Divider orientation='vertical' flexItem />
             </Box>
-          } */}
+          }
 
           <Box
             sx={{
               gridColumn: isMobile ? '1 / span 1' : '3 / span 1',
               display: 'flex',
               flexWrap: 'wrap',
+              maxWidth: isMobile ? '350px' : '100%',
+              mx: isMobile ? 'auto' : 'initial',
               justifyContent: isMobile ? 'center' : 'initial',
               gap: 1,
             }}>

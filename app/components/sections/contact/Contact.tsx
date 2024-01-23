@@ -36,7 +36,7 @@ const Contact = () => {
             variant='h3'
             sx={{
               textAlign: 'center',
-              textShadow: `1px 1px 2px ${alpha(theme.palette.info.dark, 0.8)}`,
+              textShadow: `1px 1px 2px ${alpha(theme.palette.info.dark, 0.25)}`,
               color: theme.palette.text.primary,
             }}>
             Get in touch.

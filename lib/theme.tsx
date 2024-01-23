@@ -117,7 +117,6 @@ const theme = createTheme({
         lineHeight: '2rem',
       },
       fontWeight: 500,
-      cursor: 'default',
     },
     h5: {
       color: color['white'],
@@ -128,14 +127,12 @@ const theme = createTheme({
         lineHeight: '1.75rem',
       },
       fontWeight: 500,
-      cursor: 'default',
     },
     h6: {
       color: color['white'],
       fontSize: '1rem',
       lineHeight: '1.5rem',
       fontWeight: 500,
-      cursor: 'default',
     },
     // button
     button: {

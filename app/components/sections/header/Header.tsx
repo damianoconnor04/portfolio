@@ -47,13 +47,13 @@ const Header = () => {
             <Typography variant='h1'>Damian O&apos;Connor</Typography>
           </Stack>
           <Typography component='h2' variant='h4' sx={{ mt: -1, textWrap: 'pretty', zIndex: 1 }}>Front End Developer at Leap Brands</Typography>
-          <Typography variant='body2' sx={{ textWrap: 'pretty', zIndex: 1, cursor: 'default', mt: -0.5 }}>I bring ideas to life through elegant, responsive web solutions&#8212; pixel by pixel.</Typography>
+          <Typography variant='body2' sx={{ textWrap: 'pretty', zIndex: 1, mt: -0.5 }}>I bring ideas to life through elegant, responsive web solutions&#8212; pixel by pixel.</Typography>
         </Stack>
         <Stack direction='row' justifyContent='space-between' alignItems='center' sx={{ pb: isTablet ? 1 : 2, }}>
-          <Stack direction='row' gap={2.5}>
-            <CustomIconButton ariaLabel='Damian O&apos;Connor GitHub Profile'><GitHub /></CustomIconButton>
-            <CustomIconButton ariaLabel='Damian O&apos;Connor LinkedIn Profile'><LinkedIn /></CustomIconButton>
-            <CustomIconButton ariaLabel='Damian O&apos;Connor Email Address'><Email /></CustomIconButton>
+          <Stack direction='row' gap={1.5}>
+            <CustomIconButton target='_blank' href='https://github.com/damianoconnor04' ariaLabel='Damian O&apos;Connor GitHub Profile'><GitHub /></CustomIconButton>
+            <CustomIconButton target='_blank' href='/' ariaLabel='Damian O&apos;Connor LinkedIn Profile'><LinkedIn /></CustomIconButton>
+            <CustomIconButton href='mailto:damianoconnor04@gmail.com' ariaLabel='Damian O&apos;Connor Email Address'><Email /></CustomIconButton>
           </Stack>
           {!isTablet && <CustomButton icon={<FileDownloadOutlined />}>Resume</CustomButton>}
         </Stack>

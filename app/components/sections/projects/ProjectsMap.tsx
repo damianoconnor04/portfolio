@@ -26,14 +26,17 @@ const ProjectsMap = () => {
     )
   );
 
-  const { isMobile, isTablet } = useIsMobile();
+  const { isTablet } = useIsMobile();
 
   return (
-    <Stack gap={4}>
+    <Stack
+      gap={4}
+      mx='auto'
+      maxWidth='640px'
+    >
       {Object.entries(projectsContent).map(([projectName, tags]) => (
         <Container
           disableGutters={isTablet}
-          maxWidth={isTablet ? 'xs' : 'md'}
           key={projectName}
           sx={{
             maxHeight: showAllTags ? '1000px' : '0px',
@@ -52,7 +55,7 @@ const ProjectsMap = () => {
             overflow: 'hidden',
             position: 'relative',
             zIndex: 0,
-            width: 'fit-content',
+            width: '100%',
             '::after': {
               content: '""',
               position: 'absolute',
@@ -112,7 +115,13 @@ const ProjectsMap = () => {
               </Box>
             )}
             {isTablet && <Divider />}
-            <Box sx={{ p: isTablet ? 2 : 0, backgroundColor: isTablet ? (theme) => alpha(theme.palette.grey[800], 0.25) : 'initial' }}>
+            <Box
+              sx={{
+                p: isTablet ? 2 : 0,
+                backgroundColor: isTablet
+                  ? (theme) => alpha(theme.palette.grey[800], 0.25)
+                  : 'initial',
+              }}>
               <Typography variant='h4' width='100%'>
                 {projectName}
               </Typography>
@@ -121,7 +130,6 @@ const ProjectsMap = () => {
                 width='100%'
                 sx={{
                   color: (theme) => theme.palette.text.secondary,
-                  cursor: 'default',
                 }}>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 Quisquam, voluptatum.
@@ -155,7 +163,7 @@ const ProjectsMap = () => {
               </Box>
               <CustomLinkButton
                 ariaLabel={`View all tags for ${projectName} project`}
-                typographySx={{ mt: 1, }}
+                typographySx={{ mt: 1 }}
                 onClick={() => {
                   setShowAllTags((prevState) => ({
                     ...prevState,
